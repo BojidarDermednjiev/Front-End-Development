@@ -1,0 +1,34 @@
+html{
+    font-family: Helvetica, sans-serif;
+    padding: 40px;
+}
+a{
+    color:  rgb(2, 184, 2);
+    text-decoration: none;
+}
+.header-title{
+    display: inline-block;
+    vertical-align: middle;
+}
+.header-links{
+    display: inline-block;
+    margin-left: 80px;
+    font-size: 0px;
+    vertical-align: middle;
+}
+
+.header-links ul li{
+    display: inline-block;
+    font-size: 16px;
+}
+
+.header-links ul li:not(:last-child){
+    margin-right: 25px;
+}
+
+hr{
+    border: 1px solid black;
+}
+.main-title p{
+    font-weight: 100;
+}
