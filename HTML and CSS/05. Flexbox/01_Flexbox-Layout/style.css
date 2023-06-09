@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #EEE;
+    display: flex;
+    padding: 5rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+.basic{
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.4rem;
+    color: #000;
+    box-shadow: 1px 1px 6px rgba(115, 101, 101, 0.92);
+}
+.basic.header{
+    height: 8rem;
+}
+.basic.header,
+.basic.footer{
+    flex-basis: 100%;
+}
+.basic.main,
+.basic.aside{
+    height: 20rem;
+}
+.basic.main{
+    flex: 8 1 40rem;
+}
+.basic.aside{
+    flex: 2 1 20rem;
+}

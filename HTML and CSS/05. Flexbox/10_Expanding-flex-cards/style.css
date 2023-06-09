@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:  rgb(238, 238, 238);
+}
+section.container{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+img{
+    height: 450px;
+    border-radius: 6px;
+    -webkit-box-shadow: -2px 0px 64px 14px rgba(171,171,171,1);
+    -moz-box-shadow: -2px 0px 64px 14px rgba(171,171,171,1);
+    box-shadow: -2px 0px 64px 14px rgba(171,171,171,1);
+}
+img:not(:nth-child(2)){
+    width: 120px;
+    object-fit:cover;
+}

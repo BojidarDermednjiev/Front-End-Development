@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 36px 54px;
+}
+header{
+  display: flex;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+header .topic{
+  text-transform: uppercase;
+  width: 80%;
+}
+header .list{
+  display: flex;
+  align-items: flex-end;
+  display: flex;
+  width: 20%;
+}
+header ul.list a{
+  color: rgb(0, 153, 0);
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  align-items: end;
+}
+header .navigation ul.list li:not(:last-child){
+  margin-right: 1.5rem;
+}
