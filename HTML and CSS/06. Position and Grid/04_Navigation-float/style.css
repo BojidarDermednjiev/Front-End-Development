@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 24px 54px;
+    background: rgb(238, 238, 238);
+}
+header.first{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2,1fr);
+    border-bottom: 3px solid black;
+    grid-area: header;
+}
+header p{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 12px;
+    font-weight: bold;
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+header p,
+header ul,
+header li{
+    display: inline-block;
+}
+header ul{
+    position: absolute;
+    right: 5%;
+}
+header li a{
+    text-decoration: none;
+    color: rgb(0, 102, 0);
+}
+header.first li:not(:last-child){
+    padding-right: 24px;
+}
+main{
+    width: 80%;
+}
+aside{
+    grid-area: aside;
+}
+main article header h1{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+main article section .img1{
+    border: 6px solid black;
+    width: 150px;
+    height: 220px;
+    padding: 8px;
+    margin-left: 24px;
+    margin-bottom: 24px;
+    float:  right;
+}
+main article section p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: justify;
+    padding: 12px;
+}
+aside.aside {
+    position: absolute;
+    top: 8%;
+    left: 80%;
+}
+aside.aside a{
+    text-decoration: none;
+    color: rgb(0, 102, 0);
+    cursor: pointer;
+}
+main article section .img2{
+    border: 6px solid black;
+    padding: 8px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    float:  left;
+    box-shadow: rgba(0, 0, 0, 0.25);
+    background: rgb(255, 255, 255);
+}
+h2{
+    font-family: Georgia, serif;
+}
+div.second{
+    display: grid;
+}
+div.second .nes{
+    grid-row: 1/3;
+    text-align: justify;
+}
+div.second aside blockquote{
+    padding: 18px;
+    border-left: 4px solid rgb(210, 210, 210);
+    grid-row: 1/3;
+    text-align: justify;
+    font-family: Georgia, serif;
+    font-style: italic;
+    box-shadow: rgba(0, 0, 0, 0.25);
+    background: rgb(255, 255, 255);
+}
+div.second aside blockquote p{
+    text-align: right;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
