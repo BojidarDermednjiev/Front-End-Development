@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 24px 54px;
+    background-color: rgb(238, 238, 238);
+}
+h1,h2{
+    font-family: Arial, Helvetica, sans-serif, serif;
+}
+.page{
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    width: 100%;
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+}
+main section.section-One{
+    padding: 10px;
+    gap: 2px;
+    font-size: 20px;
+    text-align: justify;
+}
+main section.section-One img{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+    padding: 8px;
+    margin-left: 32px;
+    float: right;
+}
+div main aside{
+    width: 20%;
+}
+div main aside p{
+    font-size: x-large;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: black;
+}
+div.first{
+    display: flex;
+    gap: 8em;
+}
+div main aside li a{
+    text-decoration: none;
+    color: rgb(0, 153, 0);
+}
+div.page main section.section-Two{
+    display: flex;
+    flex-wrap: wrap;
+}
+div.second aside{
+    width: 100%;
+}
+div.page main section.section-Two div.second{
+    display: flex;
+    flex-direction: row;
+}
+div.page main section.section-Two div.second .nes{
+    width: 50%;
+    padding-right: 64px;
+}   
+div.page main section.section-Two div.second aside blockquote{
+    width: 50%;
+    border-left: 2px solid gray;
+    padding-left: 12px;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+div.page main section.section-Two div.second aside blockquote p{
+    display: flex;
+   justify-content: end;
+   font-size:large;
+}
+div.page main section.section-Three{
+    padding: 10px;
+    gap: 2px;
+    font-size: 20px;
+}
+main section.section-Three img{
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+    padding: 8px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+@media (min-width:1800px){
+    body{
+        font-size: 23px;
+    }
+}
+@media (min-width:1300px){
+    body{
+        font-size: 21px;
+    }
+}
+@media (min-width:800px){
+    body{
+        font-size: 18px;
+    }
+}
+@media (max-width:690px){
+    body{
+        font-size: 16px;
+    }
+    div.first .section-One,
+    .section-Two,
+    .section-Three{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .img{
+        margin: 24px;
+    }
+    div.second{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    div.page main section.section-Two div.second .nes{
+        width: 100%;
+    }  
+}
+@media (min-width:600px){
+    body{
+        font-size: 16px;
+    }
+}
+@media (min-width:500px){
+    body{
+        font-size: 14px;
+    }
+}
