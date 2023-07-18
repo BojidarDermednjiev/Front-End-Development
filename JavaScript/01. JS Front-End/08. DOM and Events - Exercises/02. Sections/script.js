@@ -9,7 +9,6 @@ function create(words) {
     paragraph.style.display = "none";
 
     div.appendChild(paragraph);
-
     div.addEventListener("click", function () {
       paragraph.style.display =
         paragraph.style.display === "none" ? "block" : "none";

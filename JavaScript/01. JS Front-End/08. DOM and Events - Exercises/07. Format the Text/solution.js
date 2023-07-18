@@ -1,8 +1,8 @@
 function solve() {
-  const input = document.querySelectorAll("input").value.split(".");
+  const input = document.querySelector("#input").value.split(".");
   // clear empty last element
   input.pop();
-  const container = document.querySelectorAll("output");
+  const container = document.querySelector("#output");
 
   while (input.length > 0) {
     const p = document.createElement("p");
@@ -10,6 +10,6 @@ function solve() {
       .splice(0, 3)
       .map((text) => text.trim())
       .join(".");
-    container.appendChild(createParagraph());
+    container.appendChild(p);
   }
 }
