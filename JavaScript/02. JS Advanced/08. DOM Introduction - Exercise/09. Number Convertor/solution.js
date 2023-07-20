@@ -15,17 +15,14 @@ function solve() {
     });
   const print = (x) => (html.output.value = x);
   makeOptions(["binary", "hexadecimal"]).forEach((x) => html.convertTo.add(x));
-
-  function convert(to, from) {
-    from = Number(from) || 0;
+  function convert(from, to) {
+    to = Number(to) || 0;
     const formats = {
-      binary: (n) => (n >>> 0).toString(2),
-      hexadecimal: (n) => n.toString(16).toLocaleUpperCase(),
+      binary: (x) => (x >>> 0).toString(2),
+      hexadecimal: (x) => x.toString(16).toLocaleUpperCase(),
     };
-
-    return formats[to](from);
+    return formats[from](to);
   }
-
   html.button.addEventListener("click", () =>
     print(convert(html.convertTo.value, html.numberField.value))
   );

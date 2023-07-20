@@ -71,10 +71,8 @@ function solve() {
     return [outputBestRestaurant, outputEmployees];
   }
   function onClick() {
-    const restaurants = document.querySelector(`#inputs textarea`).textContent;
-    debugger;
-    console.log(restaurants.split("\n"));
-    let data = displayBestRestaurant(restaurants.split("\n"));
+    const restaurants = document.querySelector(`#inputs textarea`).value;
+    let data = displayBestRestaurant(restaurants);
     document.querySelector(`#bestRestaurant p`).textContent = data[0];
     document.querySelector(`#workers p`).textContent = data[1];
   }
