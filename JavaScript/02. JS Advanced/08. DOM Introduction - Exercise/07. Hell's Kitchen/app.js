@@ -1,27 +1,27 @@
 function solve() {
   document.querySelector("#btnSend").addEventListener("click", onClick);
   class Restaurant {
-    constructor() {
-      nameOfTheRestaurant;
-      employes = [];
+    constructor(nameOfTheRestaurant) {
+      this.nameOfTheRestaurant = nameOfTheRestaurant;
+      this.employees = [];
     }
     addEmpoyee(name, salary) {
-      this.employes.push({ name: name, salary: Number(salary) });
+      this.employees.push({ name: name, salary: Number(salary) });
     }
     getAvgSalary() {
-      const totalSalary = this.employes.reduce(
+      const totalSalary = this.employees.reduce(
         (total, employee) => total + employee.salary,
         0
       );
-      return totalSalary / this.employes.length;
+      return totalSalary / this.employees.length;
     }
     getBestSalary() {
-      return this.employes.reduce((maxSalary, employee) => {
+      return this.employees.reduce((maxSalary, employee) => {
         return employee.maxSalary > maxSalary ? employee.maxSalary : maxSalary;
       }, 0);
     }
     toString() {
-      return employes
+      return this.employees
         .sort((a, b) => a.salary - b.salary)
         .map(
           (employee) => `Name ${employee.name} With Salary: ${employee.salary}`
@@ -32,8 +32,8 @@ function solve() {
   function displayBestRestaurant(restaurants) {
     const currRestaurant = new Map();
 
-    restaurants.forEach((x) => {
-      const [restaurantName, ...workersStr] = x.split(" - ");
+    for (const item of restaurants) {
+      const [restaurantName, ...workersStr] = item.split(" - ");
 
       if (!currRestaurant.has(restaurantName)) {
         const restaurant = new Restaurant(restaurantName);
@@ -49,7 +49,7 @@ function solve() {
         });
         currRestaurant.set(restaurantName, restaurant);
       }
-    });
+    }
 
     let bestRestaurant;
     let bestAvgSalary = 0;
@@ -63,16 +63,13 @@ function solve() {
     });
     const { name, employee } = bestRestaurant;
     const bestSalary = bestRestaurant.getBestSalary();
-    const formattedWorkers = bestRestaurant.toString();
-    const outputBestRestaurant = `Name: ${name} Average Salary: ${bestAvgSalary.toFixed(
-      2
-    )} Best Salary: ${bestSalary.toFixed(2)}`;
-    const outputEmployees = formattedWorkers;
+    const outputEmployees = bestRestaurant.toString();
+    const outputBestRestaurant = `Name: ${name} Average Salary: ${bestAvgSalary.toFixed(2)} Best Salary: ${bestSalary.toFixed(2)}`;
     return [outputBestRestaurant, outputEmployees];
   }
   function onClick() {
     const restaurants = document.querySelector(`#inputs textarea`).value;
-    let data = displayBestRestaurant(restaurants);
+    let data = displayBestRestaurant(restaurants.split(`\n`));
     document.querySelector(`#bestRestaurant p`).textContent = data[0];
     document.querySelector(`#workers p`).textContent = data[1];
   }
