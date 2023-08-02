@@ -48,9 +48,10 @@ async function submitInfo() {
   };
   if (bookTitle.textContent === `Edit FORM`) {
     httpHeader.method = `PUT`;
-    API_URL += editId;
+    await fetch(`${API_URL}${editId}`, httpHeader);
+  } else {
+    await fetch(`${API_URL}`, httpHeader);
   }
-  await fetch(API_URL, httpHeader);
   loadBooks();
   if (bookTitle.textContent === `Edit FORM`) {
     bookTitle.textContent = `FORM`;
