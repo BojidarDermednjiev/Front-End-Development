@@ -44,7 +44,6 @@ async function create() {
   })
     .then((res) => res.json())
     .then(() => {
-      debugger;
       info.person.value = ``;
       info.phone.value = ``;
       loadPhone();
