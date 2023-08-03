@@ -49,7 +49,7 @@ function solve() {
     buyTextArea.value += `Total price: ${totalPrice.toFixed(2)}\n`;
     buyTextArea.value += `Average decoration factor: ${
       totalDecFactor / allCheckedInputs.length
-    }\n`;
+    }`;
   }
   function createElement(type, content, parentNode, id, classes, attributes) {
     const htmlElement = document.createElement(type);
