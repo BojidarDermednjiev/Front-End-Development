@@ -1,5 +1,4 @@
 let API_URL = `http://localhost:3030/jsonstore/collections/books/`;
-console.log(API_URL.length);
 const loadBooksBtn = document.querySelector(`#loadBooks`);
 const container = document.querySelector(`tbody`);
 const [titleInput, authorInput] = Array.from(
@@ -15,14 +14,15 @@ function attachEvents() {
 async function loadBooks() {
   container.innerHTML = ``;
   const responce = await (await fetch(API_URL)).json();
+  console.log(JSON.stringify(responce, null, 2));
   let id = Object.keys(responce);
   Object.values(responce).forEach((x, i) => {
-    const tr = createElemente(`tr`, 0, null, null, container);
-    createElemente(`td`, 0, null, x.title, tr);
-    createElemente(`td`, 0, null, x.author, tr);
-    const td = createElemente(`td`, 0, null, null, tr);
-    const editBtn = createElemente(`button`, 0, null, `Edit`, td);
-    const deleteBtn = createElemente(`button`, 0, null, `Delete`, td);
+    const tr = createElemente(`tr`, [], false, false, container);
+    createElemente(`td`, [], false, x.title, tr);
+    createElemente(`td`, [], false, x.author, tr);
+    const td = createElemente(`td`, [], false, false, tr);
+    const editBtn = createElemente(`button`, [], false, `Edit`, td);
+    const deleteBtn = createElemente(`button`, [], false, `Delete`, td);
     editBtn.addEventListener(`click`, () => {
       editId = id[i];
       bookTitle.textContent = `Edit FORM`;
